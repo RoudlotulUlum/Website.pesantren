@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMUSA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="formusa.png.png" alt="Logo" class="logo"> <!-- Logo -->
+        <h1>FORMUSA</h1> <!-- Judul -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search">
+            <h2>Cari Permasalahan</h2>
+            <input type="text" id="searchInput" placeholder="Cari berdasarkan judul atau tanggal">
+            <button onclick="searchBook()">Cari</button>
+        </section>
+
+        <section id="book-list">
+            <h2>Daftar Hasil FORMUSA</h2>
+            <div id="books"></div>
+            <div id="no-results" style="display: none; color: #333; font-style: italic;"></div> <!-- Pesan tidak ada hasil -->
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align: center;">&copy; FORMUSA Copyright.</p>
+    </footer>
+
+    <script>
+        // Daftar buku dengan link ke halaman detail
+        const books = [
+            { title: "Perbedaan I'rob", author: "29 Juli 2024", link: "perbedaan-irob.html" },
+            { title: "To Kill a Mockingbird", author: "Harper Lee", link: "to-kill-a-mockingbird.html" },
+            { title: "Lupa Bacaan Fatihah", author: "29 Juli 2024", link: "lupa-bacaan-fatihah.html" },
+            { title: "Pride and Prejudice", author: "Jane Austen", link: "pride-and-prejudice.html" }
+        ];
+
+        // Menampilkan daftar buku
+        function displayBooks(bookList) {
+            const booksDiv = document.getElementById('books');
+            const noResultsDiv = document.getElementById('no-results');
+            booksDiv.innerHTML = '';
+            noResultsDiv.style.display = 'none'; // Sembunyikan pesan tidak ada hasil
+
+            if (bookList.length === 0) {
+                noResultsDiv.textContent = 'Tidak ada hasil yang ditemukan.';
+                noResultsDiv.style.display = 'block'; // Tampilkan pesan tidak ada hasil
+            } else {
+                bookList.forEach(book => {
+                    const bookDiv = document.createElement('div');
+                    bookDiv.className = 'book';
+                    bookDiv.innerHTML = `<div class="book-title"><a href="${book.link}">${book.title}</a></div>
+                                         <div class="book-author">${book.author}</div>`;
+                    booksDiv.appendChild(bookDiv);
+                });
+            }
+        }
+
+        // Fungsi pencarian buku
+        function searchBook() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredBooks = books.filter(book => 
+                book.title.toLowerCase().includes(searchInput) || 
+                book.author.toLowerCase().includes(searchInput)
+            );
+            displayBooks(filteredBooks);
+        }
+
+        // Menampilkan semua buku saat halaman pertama kali dimuat
+        window.onload = () => displayBooks(books);
+        
+    </script>
+    
+</body>
+</html>

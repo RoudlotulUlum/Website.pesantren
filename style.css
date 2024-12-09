@@ -1,0 +1,195 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Latar belakang utama yang sangat lembut */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1f2a38, #004d00); /* Gradien yang lebih elegan dan bergradasi lembut */
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih lembut */
+}
+
+header img.logo {
+    width: 90px; /* Ukuran logo yang lebih optimal */
+    height: auto;
+    margin-bottom: 10px; /* Jarak antara logo dan judul */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em; /* Ukuran font yang lebih besar */
+    color: #e0e0e0; /* Warna teks judul yang lembut */
+    letter-spacing: 1.5px; /* Spasi antar huruf yang lebih besar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Bayangan teks yang lembut */
+}
+
+/* Navigasi */
+nav {
+    margin-top: 20px; /* Jarak antara judul dan navigasi */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px; /* Jarak antar item navigasi */
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffffff; /* Warna latar belakang tombol navigasi */
+    color: #333; /* Warna teks */
+    text-decoration: none;
+    border-radius: 6px; /* Radius sudut yang lebih besar */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transisi yang halus */
+    font-weight: 600; /* Font lebih tebal untuk tombol navigasi */
+    font-size: 16px; /* Ukuran font yang lebih besar */
+}
+
+nav ul li a:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat hover */
+    transform: translateY(-3px); /* Efek mengangkat saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+}
+
+nav ul li a:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #004d00, #1f2a38); /* Gradien yang lebih elegan dan bergradasi lembut */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Bayangan footer */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px; /* Lebar maksimum konten utama */
+    margin: 0 auto; /* Pusatkan konten */
+}
+
+/* Pencarian */
+#search {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#search input[type="text"] {
+    width: 100%;
+    max-width: 500px; /* Batas lebar maksimum */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Warna border yang lembut */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Bayangan untuk input */
+}
+
+#search button {
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF; /* Warna tombol */
+    color: white;
+    transition: background-color 0.3s, transform 0.3s; /* Transisi yang halus */
+}
+
+#search button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+    transform: scale(1.05); /* Efek memperbesar saat hover */
+}
+
+/* Daftar Buku */
+#book-list {
+    background-color: #ffffff; /* Latar belakang daftar buku */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#book-list h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #333; /* Warna teks judul buku */
+}
+
+.book {
+    border: 1px solid #ddd; /* Border buku */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Latar belakang buku */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.book:hover {
+    background-color: #f1f1f1; /* Warna saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px; /* Jarak antara judul dan detail buku */
+}
+
+.book-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.book-title a:hover {
+    color: #007BFF; /* Warna saat hover */
+}
+
+.book-author {
+    font-size: 1em;
+    color: #777; /* Warna penulis */
+    margin-bottom: 10px; /* Jarak antara penulis dan deskripsi */
+}
+
+.book-description {
+    font-size: 15px;
+    color: #666;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.book button {
+    margin-top: 10px;
+    padding: 12px 20px;
+    background-color: #007BFF; /* Warna tombol */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+    transform: scale(1.05); /* Efek memperbesar saat hover */
+}
+
